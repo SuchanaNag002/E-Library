@@ -1,0 +1,4 @@
+.full_screen_wrapper{
+    @apply h-screen w-screen;
+    background-color: var(--color-black4, black );
+}
