@@ -1,0 +1,33 @@
+.row{
+    width: 98vw;
+    overflow-x: scroll;
+}
+.row::-webkit-scrollbar {
+    display: none; /* For webkit-based browsers like Chrome and Safari */
+    width: 0; /* For IE */
+    background: transparent; /* For Firefox */
+}
+.card {
+    padding: 1rem;
+}
+.card img{
+    width: 10rem;
+}
+.card__borrow,.card__cart{
+    margin: 0.3rem;
+}
+.card__cart{
+    font-size: 0.6rem;
+    padding: 0.1rem 0.3rem;
+    background-color: #F31559;
+    border-radius: 2rem;
+}
+.card__borrow{
+    font-size: 0.7rem;
+    padding: 0.1rem 0.3rem;
+    background-color: #F0DE36;
+    border-radius: 2rem;
+}
+.card:hover{
+    background-color: beige;
+}
