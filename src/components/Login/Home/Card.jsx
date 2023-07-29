@@ -1,32 +1,42 @@
-import React from 'react'
+
+import React,{useRef} from 'react'
 import { useRouter } from 'next/navigation'
-import apiCaller from '@/api/apiCaller';
-import { UserAuth } from '@/context/authContext';
+import ActionButtons from '../actionButtons/ActionButtons';
+import {MdClose} from 'react-icons/md'
 
 const Card = (props) => {
     const book = props.details;
+    const cardRef = useRef(null);
     const router=useRouter();
-    const {user,userDetails,setUserDetails} = UserAuth();
-    if (!user || !userDetails) return null;
     function handleRouting(){
         router.push("/BookDetails/" + book._id);
+        // props.setActiveCard(book._id);
     }
-    function addToCart(){
-      apiCaller.addToCart(user.email,book._id).then((data)=>{
-        setUserDetails(data);
-        console.log("ADDED",data);
-      })
+    function handleClose(){
+      props.setActiveCard(null);
     }
+    
   return (
-    <div className='card flex flex-col'>
-        <img className="cursor-pointer" src={book.coverLink} alt={book.name} onPointerDown={handleRouting}/>
-        <h1 className='font-bold cursor-pointer' onPointerDown={handleRouting}>{book.name}</h1>
-        <p className='flex gap-4 cursor-pointer' onPointerDown={handleRouting}><b>Genre: </b> {book.genre}</p> 
-        <div className='card__buttons flex' >
-            <button className='card__borrow'>Borrow</button>
-            <button className='card__cart' onClick={addToCart}>Add To Cart</button>
+    <>
+    {(props.activeCard === null)?
+    <div ref={cardRef} className='card'>
+        <><img className="cursor-pointer" src={book.coverLink} alt={book.name} onClick={handleRouting}/>
+        <h1 className='font-bold cursor-pointer' onClick={handleRouting}>{book.name}</h1>
+        <p className='flex gap-4 cursor-pointer' onClick={handleRouting}><b>Genre: </b> {book.genre}</p> 
+        <ActionButtons details={book}/>
+        </>
+    </div> : <></>}
+        {(props.activeCard !== null && props.activeCard === book._id.toString())?
+        <div className='relative'>
+          <div className='book__details'>
+            <div className='text-xl' onClick={handleClose}><MdClose /></div>
+            <h1 className='text-2xl'> {book.name} </h1>
+          </div>
         </div>
-    </div>
+        :
+        <></>
+        }
+      </>
   )
 }
 

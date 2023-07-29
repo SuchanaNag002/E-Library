@@ -1,11 +1,10 @@
 import React from 'react'
-import Nav from './Nav';
 import Row from '@/components/Login/Home/Row';
 import apiCaller from '@/api/apiCaller';
 const HomePage = () => {
   return (
     <div className='home'>
-      <Nav />
+
       <Row cat="Physics" callerFunction={apiCaller.searchByCatagory}/>
       <Row cat="Computer Science" callerFunction={apiCaller.searchByCatagory}/>
       <Row cat="Mathematics" callerFunction={apiCaller.searchByCatagory}/>

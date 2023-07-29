@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import apiCaller from '@/api/apiCaller'
 import "@/styles/bookDetails.css";
+import ActionButtons from '@/components/Login/actionButtons/ActionButtons';
 
 const BookDetailsPage = (props) => {
   const [BookDetails,setBookDetails] = useState(null);
@@ -12,9 +13,16 @@ const BookDetailsPage = (props) => {
     return null;
   }
   return (
-    <div className='book_details'>
-      <div className='book_details__image-container'>
+    <div className='book__details'>
+      <div className='book__details__image-container'>
         <img src={BookDetails.coverLink} alt='' className='book_details__image' />
+      </div>
+      <div className='book__details__content'>
+        <div className='book__details__title'>{BookDetails.name}</div>
+        <div className='book__details__id'><b className='font-bold'>ISBN : </b> {BookDetails._id}</div>
+        <div className='book__details__author'><b className='font-bold'>Author :</b> {BookDetails.author} </div>
+        <div className='book__details__description'>{BookDetails.description}</div>
+        <ActionButtons details={BookDetails}/>
       </div>
     </div>
   )
