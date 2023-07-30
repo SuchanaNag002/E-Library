@@ -104,5 +104,9 @@
 .card .inCart{
     background-color: #cdcdcd;
 }
+.card .inMyBooks{
+    background-color: #e71ccff6;
+    color: white;
+}
 
 

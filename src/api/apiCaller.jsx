@@ -22,6 +22,12 @@ class apiCaller{
         const data = await serverInstance.get(requests.addToCart + email+"/"+id);
         return data.data;
     }
+    static async addToMyBooks(email,id){
+        let currentTime = new Date().getTime();
+        console.log(requests.addToMyBooks + email+"/"+id + "/" + currentTime)
+        const data = await serverInstance.get(requests.addToMyBooks + email+"/"+id + "/" + currentTime);
+        return data.data;
+    }
 
 }
 

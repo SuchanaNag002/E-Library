@@ -46,6 +46,10 @@
     background-color: #F0DE36;
     border-radius: 2rem;
 }
+.book__details .inMyBooks{
+    background-color: #e71ccff6;
+    color: white;
+}
 .book__details .card__borrow:hover,.book__details .card__cart:hover{
     scale: 1.1;
 }
