@@ -45,7 +45,8 @@ const CartPageComponent = (props) => {
     return (
         <div>
              <div className="cart__page">
-      <h1 className='cart__heading'>Cart Page for : {userDetails.name}</h1>
+      {(!props.myBooks)?<h1 className='cart__heading'>Cart Page for : {userDetails.name}</h1>:
+        <h1 className='cart__heading'>My Books Page for : {userDetails.name}</h1>}
 
       {Items.length > 0 ? (
         Items.map((item) => (

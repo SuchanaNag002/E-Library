@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { UserAuth } from '@/context/authContext'
 import LoginButton from '@/components/Login/LoginButton'
 import Cart from '@/components/Login/Nav/Cart'
+import ProfileDropdown from '@/components/Login/Nav/ProfileDropDown'
 
 const Nav = () => {
     const {user,userDetails} = UserAuth();
@@ -18,7 +19,7 @@ const Nav = () => {
                         <>
                             <Link href="/MyBooks"><h1 className='text-white'>My Books</h1></Link>
                             <Cart number={userDetails.cart.length}/>
-                            <img src={user.photoURL} className='h-10 w-10 rounded-full'/>
+                            <ProfileDropdown />
                         </>
                     }
                 </div>

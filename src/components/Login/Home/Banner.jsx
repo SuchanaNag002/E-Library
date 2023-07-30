@@ -15,9 +15,6 @@ const Banner = (props) => {
                 <h1 className='banner__title'>E-Library</h1>
                 <div className="banner__search">
                     <input type='text' className='banner__input' placeholder="Search" value={searchValue} onChange={handleSearch}></input>
-                    <div className='banner__search__icon'>
-                        <BsSearch/>
-                    </div>
                 </div>
                 
             </div>

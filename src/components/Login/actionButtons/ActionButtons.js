@@ -49,7 +49,7 @@ const ActionButtons = (props) => {
     if (!user || !userDetails) return null;
     return (
             <div className='card__buttons flex' >
-                <button className={'card__borrow ' + ((inMyBooks)?" inMyBooks":"")}
+                <button className={'card__borrow ' + ((inMyBooks)?" inMyBooks":"")} id={(book.count<=book.Borrow.length)?"inActiveButton":""}
                  onClick={addToMyBooks}>{(inMyBooks)?"Remove":"Borrow"}</button>
                 <button className={'card__cart ' + ((inCart)?" inCart":"")} onMouseDown={addToCart}>{(inCart)?"Remove":"Add To Cart"}</button>
             </div>

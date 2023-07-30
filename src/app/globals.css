@@ -78,6 +78,12 @@ a {
   color: white;
 }
 
+#inActiveButton{
+  pointer-events: none;
+  opacity: 0.5; /* You can change the opacity to give a visual indication that it's disabled */
+  cursor: not-allowed;
+}
+
 @keyframes fade-in-up {
   0% {
     transform: translateY(-100%);
