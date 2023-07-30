@@ -7,6 +7,7 @@ import {MdArrowLeft,MdArrowRight} from "react-icons/md"
 const Row = (props) => {
     const [bookList,setBookList] = useState([]);
     const [activeCard,setActiveCard] = useState(null);
+    
     const rowRef = React.createRef();
 
     const scrollLeft = () => {
@@ -24,6 +25,7 @@ const Row = (props) => {
         })
     },[]);
   return (
+    <>
     <div className='row__container'>
         <h1 className='text-2xl font-bold mx-3'> Read {props.cat} Books</h1>
         {(activeCard===null)?<><div className="scroll__buttons h-full">
@@ -42,6 +44,7 @@ const Row = (props) => {
             }
         </div>
     </div>
+    </>
    
   )
 }
