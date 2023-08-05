@@ -28,11 +28,10 @@ const HomePage = () => {
       <>  
           <h1 className='text-2xl m-8'>Searching For: {searchValue }</h1>
           <div className='flex flex-wrap items-center justify-center'>
-          {
-            bList.filter(item => {
-            const {name,author,genre,...rest} = item;
-            return [author,name,genre].some(value => (new RegExp(`.*${searchValue}.*`, "i")).test(value))}).map((b)=> <Card details={b} />)
-          }
+          {bList.filter(item => {
+            const { name, author, genre, ...rest } = item;
+            return [author, name, genre].some(value => (new RegExp(`.*${searchValue}.*`, "i")).test(value));
+          }).map((b) => <Card key={b._id} details={b} />)}
           </div>
       </>}
       
