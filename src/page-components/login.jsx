@@ -3,8 +3,9 @@ import { auth } from "../firebase/firebaseConfig";
 import { UserAuth } from "@/context/authContext";
 import { useEffect} from "react";
 import LoginButton from "@/components/Login/LoginButton";
-
 import { useRouter } from "next/navigation";
+
+
 export default function Login() {
   const router = useRouter();
   const {user} = UserAuth();

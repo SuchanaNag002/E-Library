@@ -17,7 +17,7 @@ const LoginButton = () => {
   };
   return (
     <>
-        <LoadingPage />
+        {loading && <LoadingPage /> }
         <button
             onClick={login}
             className="flex items-center justify-center px-8 py-3 text-sm sm:text-base bg-black hover:bg-slate-800
