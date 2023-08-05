@@ -23,7 +23,7 @@ export default function Login() {
         </h1>
       </div>
       <p className=" lg:w-9/12 my-6 text-base font-medium sm:text-lg md:text-xl lg:text-2xl text-center mb-8">
-      Dive into a world of boundless knowledge and captivating stories at our E-Library. Embark on a literary journey like no other, where imagination knows no bounds, and the wonders of literature await you. Whether you are a seasoned bookworm or a curious explorer, our vast collection caters to every readers taste and curiosity.
+      {"Dive into a world of boundless knowledge and captivating stories at our E-Library. Embark on a literary journey like no other, where imagination knows no bounds, and the wonders of literature await you. Whether you are a seasoned bookworm or a curious explorer, our vast collection caters to every readers taste and curiosity."}  
       </p>
       <LoginButton />
     </div>
