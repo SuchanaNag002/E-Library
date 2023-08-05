@@ -1,11 +1,15 @@
-import React from 'react'
+"use client"
+import React,{useState} from 'react'
 import { FcGoogle } from "react-icons/fc";
 import { UserAuth } from '@/context/authContext';
+import LoadingPage from '@/page-components/Loading';
 
 const LoginButton = () => {
+  const [loading,setLoading] = useState(false);
   const {logIn} = UserAuth();
   const login = async () => {
     try {
+      setLoading(true);
       await logIn();
     } catch (err) {
       console.log(err);
@@ -13,6 +17,7 @@ const LoginButton = () => {
   };
   return (
     <>
+        <LoadingPage />
         <button
             onClick={login}
             className="flex items-center justify-center px-8 py-3 text-sm sm:text-base bg-black hover:bg-slate-800
