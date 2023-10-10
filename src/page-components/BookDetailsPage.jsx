@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import apiCaller from '@/api/apiCaller'
 import "@/styles/bookDetails.css";
-import ActionButtons from '@/components/Login/actionButtons/ActionButtons';
+
 
 const BookDetailsPage = (props) => {
   const [BookDetails,setBookDetails] = useState(null);
@@ -22,7 +22,6 @@ const BookDetailsPage = (props) => {
         <div className='book__details__id'><b className='font-bold'>ISBN : </b> {BookDetails._id}</div>
         <div className='book__details__author'><b className='font-bold'>Author :</b> {BookDetails.author} </div>
         <div className='book__details__description'>{BookDetails.description}</div>
-        <ActionButtons details={BookDetails}/>
       </div>
     </div>
   )
