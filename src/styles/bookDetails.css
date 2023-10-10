@@ -1,87 +1,97 @@
-.book__details{
-    margin: 3rem ;
-    display: grid;
-    grid-template-rows: max-content;
-    grid-template-columns: max-content 1fr;
+.book__details {
+  margin: 3rem;
+  display: grid;
+  grid-template-columns: minmax(250px, 400px) 1fr;
+  grid-gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+
+  /* Adjustments for responsiveness */
+  @media screen and (max-width: 769px) {
+    margin: 1rem 5vw;
+    grid-template-columns: 1fr;
+  }
 }
-.book__details__image-container{
-    margin-right: 1rem;
-    width: 400px;
-    animation: fade-in-left 0.5s ease-in-out forwards;
+
+.book__details__image-container {
+  width: 100%;
+  max-width: 400px;
+  border: 8px solid #000; /* Add border to the book cover */
+  border-radius: 8px;
+  animation: fade-in-left 0.5s ease-in-out forwards;
 }
-.book__details__content{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    gap: 1rem;
-    transform: translateX(300%);
-    animation: fade-in-right 0.6s ease-in-out 0.4s forwards;
-    
+
+.book__details__content {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #00000074;
+  border-radius: 8px;
+  gap: 1.5rem;
+  animation: fade-in-right 0.6s ease-in-out 0.4s forwards;
 }
-.book__details__title{
-    font-size: 1.5rem;
-    font-weight: 800;
+
+.book__details__title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #333;
+  text-align: center; /* Center the book name */
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
 }
-.book__details .card__buttons{
-    margin: 1rem 2rem;
-    gap: 2rem;
-    color: white;
-    font-weight: 800;
+
+.book__details__id,
+.book__details__author {
+  font-size: 1.2rem;
+  text-align: center; /* Center the author name and ISBN */
 }
-.book__details .card__borrow,.book__details .card__cart{
-    max-width: 10rem;
-    height: 100%;
-    border-radius: 1rem;
-    padding: 1rem;
-    font-size: 1.2rem;
+
+.book__details__description {
+  border: 1px solid #ccc;
+  margin-left: 1rem;
+  margin-right : 1rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
 }
-.book__details .card__cart{
-    font-size: 0.6rem;
-    background-color: #F31559;
-    border-radius: 2rem;   
+
+.card__cart {
+  background-color: #f31559;
+  border-radius: 2rem;
+  color: white;
+  transform: scale(0.95); /* Slightly reduce zoom-out effect */
 }
-.book__details .card__borrow{
-    font-size: 0.7rem;
-    background-color: #F0DE36;
-    border-radius: 2rem;
+
+.card__borrow {
+  background-color: #f0de36;
+  border-radius: 2rem;
+  color: #333;
 }
-.book__details .inMyBooks{
-    background-color: #e71ccff6;
-    color: white;
+
+.card__cart:hover,
+.card__borrow:hover {
+  transform: scale(1);
 }
-.book__details .card__borrow:hover,.book__details .card__cart:hover{
-    scale: 1.1;
+
+.card__cart:active,
+.card__borrow:active {
+  transform: scale(0.9);
 }
-.book__details .card__borrow:active,.book__details .card__cart:active{
-    scale: 0.8;
+
+.inMyBooks {
+  background-color: #e71ccff6;
+  color: white;
 }
-.book__details .inCart{
-    background-color: #cdcdcd;
+
+.inCart {
+  background-color: #cdcdcd;
 }
-@media screen and (max-width: 769px){
-    .book__details{
-        margin: 1rem 5vw;
-        grid-template-columns: 90vw;
-        grid-template-rows: max-content 1fr;
-        text-align: center;
-        align-items: center;
-        justify-items: center;
-        gap: 2rem;
-    }
-    .book__details__content{
-        align-items: center;
-        animation: fade-in-up 2s ease-in-out 1s forwards;
-    }
-    .book__details__description{
-        width: 70vw;
-    }
-    .book__details__image-container{
-        margin-right: 1rem;
-        width: 250px;
-        animation: fade-in-up 2s ease-in-out forwards;
-    }
-    .book__details .card__cart{
-        font-size: 0.5rem;
-    }
+
+/* Additional Styles for Mobile View */
+@media screen and (max-width: 769px) {
+  .book__details__description {
+    width: 100%;
+    max-width: 90vw;
+    margin: 0 auto;
+  }
 }
